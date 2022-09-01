@@ -1,6 +1,6 @@
 import Markdown from "markdown-to-jsx";
 import { useEffect, useState } from "react";
-import postNotFound from "./errors/postNotFound.md";
+import postNotFound from "../errors/postNotFound.md";
 
 const Post = ({ postUrl }) => {
   const url = `${process.env.PUBLIC_URL}${postUrl}`;
@@ -25,11 +25,7 @@ const Post = ({ postUrl }) => {
       });
   }, [url]);
 
-  return (
-    <div>
-      <Markdown>{content}</Markdown>
-    </div>
-  );
+  return <Markdown>{content}</Markdown>;
 };
 
 async function notFoundHandler() {
